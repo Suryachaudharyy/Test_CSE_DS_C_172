@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #e9e9e9);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .product-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            max-width: 350px;
+            text-align: center;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .product-container:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 26px;
+            color: #333;
+            margin: 15px 0;
+        }
+        .price {
+            color: #28a745;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .quantity {
+            margin: 15px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 60px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .total {
+            font-size: 18px;
+            color: #555;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-container">
+    <img src="https://i.pinimg.com/originals/e7/ff/65/e7ff654cee54c6f1fe58279cb56c40ab.jpg" alt="Product Image">
+    <h2>Sample Product</h2>
+    <div class="price">Rs 15</div>
+    <div class="description">This is a short description of the product. It provides more details about the product’s features and qualities.</div>
+    <div class="quantity">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" value="1" min="1">
+    </div>
+    <button id="priceButton">Get Pricing</button>
+    <div class="total" id="totalPrice">Total Price: Rs 0</div>
+    <button id="buyButton">Buy Now</button>
+</div>
+
+<script>
+    document.getElementById('priceButton').addEventListener('click', function() {
+        const quantity = document.getElementById('quantity').value;
+        const pricePerUnit = 15; // Price of one unit
+        const totalPrice = quantity * pricePerUnit;
+        document.getElementById('totalPrice').innerText = `Total Price: Rs ${totalPrice}`;
+    });
+
+    document.getElementById('buyButton').addEventListener('click', function() {
+        alert('Thank you for your purchase!');
+    });
+</script>
+
+</body>
+</html>
